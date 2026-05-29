@@ -1,0 +1,24 @@
+backend:
+  name: github
+  repo: ChenRongkun/ChenRongkun.github.io
+  branch: main
+
+publish_mode: editorial_workflow
+logo_url: https://ChenRongkun.github.io/favicon.ico
+
+media_folder: "assets/images"
+public_folder: "/assets/images"
+
+collections:
+  - name: "blog"
+    label: "博客文章"
+    folder: "_posts/"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    extension: md
+    format: frontmatter
+    fields:
+      - {label: "标题", name: "title", widget: "string"}
+      - {label: "发布日期", name: "date", widget: "datetime", format: "YYYY-MM-DD HH:mm:ss"}
+      - {label: "分类", name: "categories", widget: "string", default: "随笔"}
+      - {label: "正文", name: "body", widget: "markdown"}
