@@ -1,26 +1,40 @@
 ---
 layout: post
-title:  "Welcome to Jekyll!"
+title:  "欢迎来到墨韵云大"
 date:   2024-01-01 10:00:00
-categories: jekyll update
+categories: 随笔
 ---
 
-You’ll find this post in your `_posts` directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run `bundle exec jekyll serve`, which launches a web server and auto-regenerates your site when a file is updated.
+# 墨韵云大
 
-To add new posts, simply add a file in the `_posts` directory that follows the convention `YYYY-MM-DD-name-of-post.ext` and includes the necessary front matter. Take a look at the source for this post to get an idea about how it works.
+<p style="text-indent: 0;">「会泽百家，至公天下」—— 这八个字不仅是云南大学的校训，更是无数云大人心中永恒的信念。</p>
 
-## Jekyll also offers powerful support for code snippets:
+---
 
-```ruby
-def print_hi(name)
-  puts "Hi, #{name}"
-end
-print_hi('Tom')
-#=> prints 'Hi, Tom' to STDOUT.
-```
+## 初识云大
 
-Check out the [Jekyll docs][jekyll-docs] for more info on how to get the most out of Jekyll. File all bugs/feature requests at [Jekyll’s GitHub repo][jekyll-gh]. If you have questions, you can ask them on [Jekyll Talk][jekyll-talk].
+云南大学，简称云大，坐落于春城昆明。她的历史可以追溯到1922年，是云南省最古老的综合性大学之一。
 
-[jekyll-docs]: https://jekyllrb.com/docs/home
-[jekyll-gh]: https://github.com/jekyll/jekyll
-[jekyll-talk]: https://talk.jekyllrb.com/
+校园内古木参天，建筑风格独特。东陆园区的至公堂、会泽院等历史建筑，诉说着这所百年老校的故事。
+
+## 云大之美
+
+云大的美，是那种历经岁月沉淀的美。春天，校园里的海棠花开如霞；秋天，金黄的银杏叶铺满小径。
+
+> 「我在云大的四年，是人生中最美好的时光。」
+
+## 在这里记录
+
+这个博客将记录我在云大的学习和生活。
+
+希望能够：
+
+- 📚 分享技术心得
+- 🌸 记录生活感悟  
+- 🎓 见证成长足迹
+
+愿与君共勉。
+
+---
+
+*愿你我都能在云大遇见更好的自己。*

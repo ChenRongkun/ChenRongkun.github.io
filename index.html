@@ -1,22 +1,30 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <title>Home</title>
-  </head>
-  <body>
-    <header>
-      <nav>
-        <a href="/">Home</a>
-        <a href="/about.html">About</a>
-      </nav>
-    </header>
-    <main>
-      <h1>Home</h1>
-      <p>Welcome to my blog! This is the home page.</p>
-    </main>
-    <footer>
-      <p>&copy; 2024 My Blog</p>
-    </footer>
-  </body>
-</html>
+---
+layout: default
+---
+
+<h1>墨韵云大</h1>
+
+<div style="text-align: center; margin: 3rem 0; font-style: italic; color: #666;">
+  <p>「会泽百家，至公天下」</p>
+  <p>—— 云南大学校训</p>
+</div>
+
+<div class="ink-divider" style="margin: 3rem auto;"></div>
+
+<section style="margin: 3rem 0;">
+  <h2 style="text-align: center;">近期文章</h2>
+  
+  <ul class="post-list">
+    {% for post in site.posts %}
+      <li>
+        <div class="post-meta">{{ post.date | date: "%Y年%m月%d日" }}</div>
+        <a href="{{ post.url | relative_url }}" class="post-link">{{ post.title }}</a>
+      </li>
+    {% endfor %}
+  </ul>
+</section>
+
+<div style="margin-top: 4rem; padding: 2rem; background: #faf8f5; border-radius: 8px; text-align: center;">
+  <p style="text-indent: 0; margin-bottom: 1rem;">欢迎来到我的个人博客</p>
+  <p style="text-indent: 0; color: #999; font-size: 0.9rem;">在这里记录学习心得，分享生活感悟</p>
+</div>
