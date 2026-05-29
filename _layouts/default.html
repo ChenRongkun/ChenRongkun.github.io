@@ -552,8 +552,11 @@
     </div>
 
     <footer>
-      <p>© 2024 墨小曦的Blog</p>
+      <p>© <span id="current-year"></span> 墨小曦的Blog</p>
       <p style="font-size: 0.85rem; color: #aaa;">云南大学 · 始于一九二二</p>
     </footer>
+    <script>
+      document.getElementById('current-year').textContent = new Date().getFullYear();
+    </script>
   </body>
 </html>
