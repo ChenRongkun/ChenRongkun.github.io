@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>{{ page.title }}</title>
     <style>
-      @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700&family=ZCOOL+XiaoWei&display=swap');
+      @import url('https://fonts.googleapis.com/css2?family=Ma+Shan+Zheng&family=Noto+Serif+SC:wght@300;400;500;600;700&family=ZCOOL+XiaoWei&display=swap');
 
       * {
         margin: 0;
@@ -15,249 +15,281 @@
 
       body {
         font-family: 'Noto Serif SC', serif;
-        background: #1a1a1a;
-        color: #c9c9c9;
-        line-height: 1.8;
+        background: #f0ebe0;
+        color: #3d3d3d;
+        line-height: 2;
         min-height: 100vh;
+        position: relative;
+      }
+
+      body::before {
+        content: '';
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-image:
+          radial-gradient(at 20% 30%, rgba(76, 76, 76, 0.03) 0%, transparent 50%),
+          radial-gradient(at 80% 70%, rgba(76, 76, 76, 0.03) 0%, transparent 50%),
+          url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+        opacity: 0.4;
+        pointer-events: none;
+        z-index: -1;
       }
 
       .ink-text {
+        font-family: 'Ma Shan Zheng', cursive;
+      }
+
+      .xiaowei-text {
         font-family: 'ZCOOL XiaoWei', serif;
       }
 
       header {
-        background: linear-gradient(to bottom, #2a2a2a 0%, #1a1a1a 100%);
-        padding: 2rem 3rem;
-        border-bottom: 1px solid #3a3a3a;
+        background: transparent;
+        padding: 3rem 2rem 2rem;
+        text-align: center;
         position: relative;
       }
 
-      header::before {
-        content: '云南大学';
-        position: absolute;
-        top: 50%;
-        right: 3rem;
-        transform: translateY(-50%);
+      .site-title {
+        font-family: 'Ma Shan Zheng', cursive;
+        font-size: 4rem;
+        color: #2a2a2a;
+        letter-spacing: 0.8rem;
+        text-shadow: 3px 3px 6px rgba(0,0,0,0.1);
+        margin-bottom: 0.5rem;
+      }
+
+      .site-subtitle {
         font-family: 'ZCOOL XiaoWei', serif;
         font-size: 1rem;
-        color: #8b7355;
-        letter-spacing: 0.5rem;
-        opacity: 0.5;
-      }
-
-      header {
-        position: relative;
+        color: #666;
+        letter-spacing: 0.3rem;
       }
 
       nav {
         display: flex;
-        gap: 2rem;
-        align-items: center;
+        justify-content: center;
+        gap: 3rem;
+        margin-top: 2rem;
+        padding-bottom: 1rem;
+        border-bottom: 1px solid rgba(0,0,0,0.1);
       }
 
       nav a {
         text-decoration: none;
-        color: #a0a0a0;
+        color: #555;
         font-size: 1.1rem;
-        padding: 0.5rem 1rem;
-        border-radius: 4px;
-        transition: all 0.3s ease;
+        padding: 0.3rem 1rem;
         position: relative;
+        transition: all 0.3s ease;
       }
 
-      nav a::after {
-        content: '';
+      nav a::before {
+        content: '〇';
         position: absolute;
-        bottom: 0;
-        left: 50%;
-        width: 0;
-        height: 2px;
-        background: #c9a96e;
+        left: -1.5rem;
+        color: #999;
+        opacity: 0.5;
         transition: all 0.3s ease;
-        transform: translateX(-50%);
       }
 
       nav a:hover {
-        color: #c9a96e;
+        color: #2a2a2a;
       }
 
-      nav a:hover::after {
-        width: 80%;
+      nav a:hover::before {
+        content: '●';
+        color: #2a2a2a;
+        opacity: 1;
       }
 
       .hero {
         text-align: center;
         padding: 4rem 2rem;
-        background: linear-gradient(to bottom, #2a2a2a 0%, #1a1a1a 100%);
-        border-bottom: 1px solid #3a3a3a;
         position: relative;
-        overflow: hidden;
+      }
+
+      .hero::before,
+      .hero::after {
+        content: '〰';
+        position: absolute;
+        font-size: 2rem;
+        color: #ccc;
+        letter-spacing: 2rem;
       }
 
       .hero::before {
-        content: '♾';
-        position: absolute;
-        top: 50%;
+        top: 1rem;
         left: 50%;
-        transform: translate(-50%, -50%);
-        font-size: 20rem;
-        opacity: 0.05;
-        font-family: serif;
-        color: #c9a96e;
+        transform: translateX(-50%);
+      }
+
+      .hero::after {
+        bottom: 1rem;
+        left: 50%;
+        transform: translateX(-50%);
       }
 
       .hero h1 {
-        font-family: 'ZCOOL XiaoWei', serif;
-        font-size: 3.5rem;
-        color: #e8e8e8;
-        margin-bottom: 1rem;
+        font-family: 'Ma Shan Zheng', cursive;
+        font-size: 3rem;
+        color: #2a2a2a;
         letter-spacing: 0.5rem;
-        text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        margin-bottom: 1rem;
       }
 
       .hero p {
-        font-size: 1.2rem;
-        color: #888;
-        max-width: 600px;
+        font-size: 1.1rem;
+        color: #777;
+        max-width: 500px;
         margin: 0 auto;
       }
 
-      .ink-divider {
-        width: 150px;
-        height: 2px;
-        background: linear-gradient(to right, transparent, #8b7355, transparent);
-        margin: 2rem auto;
-        position: relative;
+      .ink-separator {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 3rem auto;
+        max-width: 400px;
       }
 
-      .ink-divider::before {
-        content: '☙';
-        position: absolute;
-        left: -25px;
-        top: 50%;
-        transform: translateY(-50%);
-        color: #8b7355;
-        font-size: 1.5rem;
+      .ink-separator::before,
+      .ink-separator::after {
+        content: '';
+        flex: 1;
+        height: 1px;
+        background: linear-gradient(to right, transparent, #999, transparent);
       }
 
-      .ink-divider::after {
-        content: '❧';
-        position: absolute;
-        right: -25px;
-        top: 50%;
-        transform: translateY(-50%);
-        color: #8b7355;
+      .ink-separator span {
+        padding: 0 1.5rem;
         font-size: 1.5rem;
+        color: #999;
       }
 
       main {
-        max-width: 900px;
+        max-width: 720px;
         margin: 0 auto;
-        padding: 3rem 2.5rem;
-        background: #222222;
-        min-height: 60vh;
-        box-shadow: 0 0 50px rgba(0,0,0,0.5);
-        margin-top: 2rem;
-        margin-bottom: 2rem;
-        border-radius: 8px;
-        border: 1px solid #333;
-        position: relative;
-      }
-
-      main::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23c9a96e' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
-        pointer-events: none;
-        border-radius: 8px;
-      }
-
-      h1, h2, h3 {
-        font-family: 'ZCOOL XiaoWei', serif;
-        color: #e0e0e0;
-        margin-bottom: 1.5rem;
+        padding: 3rem 2rem;
+        background: rgba(255, 255, 255, 0.6);
+        min-height: 50vh;
+        backdrop-filter: blur(10px);
+        border-radius: 4px;
+        box-shadow: 0 4px 20px rgba(0,0,0,0.05);
       }
 
       h1 {
-        font-size: 2.4rem;
-        border-bottom: 2px solid #4a4a4a;
+        font-family: 'ZCOOL XiaoWei', serif;
+        font-size: 2rem;
+        color: #2a2a2a;
+        margin-bottom: 2rem;
         padding-bottom: 1rem;
+        border-bottom: 2px solid rgba(0,0,0,0.1);
+        text-align: center;
+        letter-spacing: 0.3rem;
       }
 
       h2 {
-        font-size: 1.8rem;
-        color: #c9a96e;
-        border-left: 3px solid #8b7355;
+        font-family: 'ZCOOL XiaoWei', serif;
+        font-size: 1.5rem;
+        color: #3d3d3d;
+        margin: 2.5rem 0 1.5rem;
         padding-left: 1rem;
+        border-left: 3px solid #555;
       }
 
       h3 {
-        font-size: 1.4rem;
-        color: #b0b0b0;
+        font-family: 'ZCOOL XiaoWei', serif;
+        font-size: 1.2rem;
+        color: #555;
+        margin: 2rem 0 1rem;
       }
 
       p {
-        margin-bottom: 1.5rem;
+        margin-bottom: 1.8rem;
         text-align: justify;
         text-indent: 2em;
-        color: #b0b0b0;
+        font-size: 1.05rem;
+        color: #444;
       }
 
       a {
-        color: #c9a96e;
+        color: #555;
         text-decoration: none;
-        border-bottom: 1px dotted #8b7355;
+        border-bottom: 1px solid #999;
         transition: all 0.3s ease;
       }
 
       a:hover {
-        color: #e8d5a3;
-        border-bottom-style: solid;
+        color: #2a2a2a;
+        border-bottom-color: #2a2a2a;
       }
 
       code {
-        background: #2a2a2a;
-        padding: 0.2rem 0.5rem;
-        border-radius: 3px;
+        background: rgba(0,0,0,0.05);
+        padding: 0.15rem 0.4rem;
+        border-radius: 2px;
         font-family: 'Courier New', monospace;
-        color: #c9a96e;
-        border: 1px solid #3a3a3a;
+        font-size: 0.95em;
+        color: #555;
       }
 
       pre {
-        background: #1a1a1a;
-        color: #c9c9c9;
+        background: #2a2a2a;
+        color: #d4d4d4;
         padding: 1.5rem;
-        border-radius: 8px;
+        border-radius: 4px;
         overflow-x: auto;
-        margin: 1.5rem 0;
-        border: 1px solid #3a3a3a;
+        margin: 2rem 0;
+        font-size: 0.95rem;
+        line-height: 1.6;
       }
 
       pre code {
         background: none;
         color: inherit;
         padding: 0;
-        border: none;
+        font-size: inherit;
       }
 
       blockquote {
-        background: #2a2a2a;
-        border-left: 4px solid #8b7355;
-        padding: 1.5rem;
+        background: rgba(0,0,0,0.03);
+        border-left: none;
+        padding: 1.5rem 2rem;
         margin: 2rem 0;
-        border-radius: 0 8px 8px 0;
         font-style: italic;
+        position: relative;
+        color: #555;
+      }
+
+      blockquote::before {
+        content: '"';
+        position: absolute;
+        top: 0;
+        left: 0.5rem;
+        font-family: 'Ma Shan Zheng', cursive;
+        font-size: 4rem;
+        color: rgba(0,0,0,0.1);
+        line-height: 1;
+      }
+
+      blockquote::after {
+        content: '"';
+        position: absolute;
+        bottom: 0;
+        right: 0.5rem;
+        font-family: 'Ma Shan Zheng', cursive;
+        font-size: 4rem;
+        color: rgba(0,0,0,0.1);
+        line-height: 1;
       }
 
       blockquote p {
-        margin-bottom: 0;
         text-indent: 0;
-        color: #a0a0a0;
+        margin-bottom: 0;
       }
 
       .post-list {
@@ -267,16 +299,16 @@
 
       .post-list li {
         padding: 1.5rem 0;
-        border-bottom: 1px dashed #3a3a3a;
+        border-bottom: 1px dashed rgba(0,0,0,0.1);
         position: relative;
-        padding-left: 2rem;
+        padding-left: 1.5rem;
       }
 
       .post-list li::before {
-        content: '•';
+        content: '·';
         position: absolute;
         left: 0;
-        color: #c9a96e;
+        color: #777;
         font-size: 1.5rem;
       }
 
@@ -285,113 +317,130 @@
       }
 
       .post-meta {
-        color: #666;
+        color: #999;
         font-size: 0.9rem;
-        margin-bottom: 0.5rem;
+        margin-bottom: 0.3rem;
+        font-family: 'ZCOOL XiaoWei', serif;
       }
 
       .post-link {
-        font-size: 1.3rem;
         font-family: 'ZCOOL XiaoWei', serif;
-        color: #e0e0e0;
+        font-size: 1.2rem;
         border: none;
+        color: #3d3d3d;
       }
 
       .post-link:hover {
-        color: #c9a96e;
+        color: #1a1a1a;
       }
 
       footer {
         text-align: center;
-        padding: 2rem;
-        background: #1a1a1a;
-        color: #666;
+        padding: 3rem 2rem;
         margin-top: 3rem;
-        border-top: 1px solid #333;
+        border-top: 1px solid rgba(0,0,0,0.1);
       }
 
       footer p {
         text-align: center;
         text-indent: 0;
-        margin: 0;
+        margin-bottom: 0.5rem;
+        color: #888;
+        font-size: 0.95rem;
       }
 
       .landmark-section {
         margin: 3rem 0;
         padding: 2rem;
-        background: #2a2a2a;
-        border-radius: 8px;
-        border: 1px solid #3a3a3a;
+        background: rgba(0,0,0,0.02);
+        border-radius: 4px;
       }
 
       .landmark-grid {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
         gap: 1.5rem;
         margin-top: 1.5rem;
       }
 
       .landmark-card {
-        background: #1a1a1a;
+        background: rgba(255,255,255,0.5);
         padding: 1.5rem;
-        border-radius: 8px;
-        border: 1px solid #3a3a3a;
+        border-radius: 4px;
+        border: 1px solid rgba(0,0,0,0.05);
         transition: all 0.3s ease;
       }
 
       .landmark-card:hover {
-        border-color: #8b7355;
-        transform: translateY(-5px);
-        box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        background: rgba(255,255,255,0.8);
+        box-shadow: 0 4px 15px rgba(0,0,0,0.08);
       }
 
       .landmark-card h3 {
-        color: #c9a96e;
-        font-size: 1.3rem;
-        margin-bottom: 1rem;
-        border-bottom: 1px solid #3a3a3a;
+        color: #444;
+        font-size: 1.2rem;
+        margin-bottom: 0.8rem;
+        margin-top: 0;
+        border-bottom: 1px solid rgba(0,0,0,0.1);
         padding-bottom: 0.5rem;
       }
 
       .landmark-card p {
         font-size: 0.95rem;
+        color: #666;
         text-indent: 0;
         margin-bottom: 0;
-        color: #888;
+        text-align: left;
       }
 
-      .about-section {
-        display: flex;
+      .spirit-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
         gap: 2rem;
-        align-items: flex-start;
-        margin: 2rem 0;
-      }
-
-      .about-content {
-        flex: 1;
-      }
-
-      .scroll-hint {
+        margin-top: 2rem;
         text-align: center;
-        color: #666;
-        font-size: 0.9rem;
-        margin-top: 1rem;
-        animation: bounce 2s infinite;
       }
 
-      @keyframes bounce {
-        0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
-        40% { transform: translateY(-10px); }
-        60% { transform: translateY(-5px); }
+      .spirit-item h3 {
+        font-family: 'Ma Shan Zheng', cursive;
+        font-size: 2rem;
+        color: #3d3d3d;
+        margin: 0;
+        border: none;
+        padding: 0;
+      }
+
+      .spirit-item p {
+        font-size: 0.9rem;
+        color: #888;
+        text-indent: 0;
+        margin-top: 0.3rem;
+      }
+
+      .intro-box {
+        background: rgba(0,0,0,0.02);
+        padding: 2rem;
+        border-radius: 4px;
+        margin: 2rem 0;
+        text-align: center;
+      }
+
+      .intro-box p {
+        text-indent: 0;
+        text-align: center;
+        margin-bottom: 0;
       }
 
       @media (max-width: 768px) {
-        header {
-          padding: 1rem;
-          flex-direction: column;
+        .site-title {
+          font-size: 2.5rem;
+          letter-spacing: 0.3rem;
         }
-        header::before {
-          display: none;
+        nav {
+          gap: 1.5rem;
+        }
+        nav a {
+          font-size: 1rem;
         }
         .hero h1 {
           font-size: 2rem;
@@ -400,7 +449,7 @@
           margin: 1rem;
           padding: 1.5rem;
         }
-        .landmark-grid {
+        .spirit-grid {
           grid-template-columns: 1fr;
         }
       }
@@ -408,6 +457,8 @@
   </head>
   <body>
     <header>
+      <h1 class="site-title">墨小曦</h1>
+      <p class="site-subtitle">云大 · 会泽百家 至公天下</p>
       <nav>
         {% for item in site.data.navigation %}
           <a href="{{ item.link }}">{{ item.name }}</a>
@@ -417,10 +468,8 @@
 
     {% if page.url == '/' %}
     <section class="hero">
-      <h1 class="ink-text">墨小曦的Blog</h1>
-      <div class="ink-divider"></div>
-      <p>云南大学 · 始于一九二二</p>
-      <p>会泽百家，至公天下</p>
+      <h1>Blog</h1>
+      <p>墨香浮动 · 记录成长</p>
     </section>
     {% endif %}
 
@@ -428,9 +477,13 @@
       {{ content }}
     </main>
 
+    <div class="ink-separator">
+      <span>❋</span>
+    </div>
+
     <footer>
-      <p>© 2024 墨小曦的Blog · 云南大学</p>
-      <p style="margin-top: 0.5rem; font-size: 0.8rem;">会泽百家，至公天下</p>
+      <p>© 2024 墨小曦的Blog</p>
+      <p style="font-size: 0.85rem; color: #aaa;">云南大学 · 始于一九二二</p>
     </footer>
   </body>
 </html>
